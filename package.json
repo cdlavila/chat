@@ -1,0 +1,31 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "A chat made with MongoDB and  WebSockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdlavila/chat.git"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "Carlos Daniel Londoño Avila",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdlavila/chat/issues"
+  },
+  "homepage": "https://github.com/cdlavila/chat#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0",
+    "nodemon": "^2.0.15"
+  }
+}
