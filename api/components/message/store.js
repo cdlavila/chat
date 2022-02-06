@@ -9,7 +9,7 @@ class Store {
 
     static async getAllMessages (user) {
         const filter = !user ? {} : { user: user }
-        return Model.find(filter)
+        return Model.find(filter).populate('user')
     }
 
     static async updateMessage (id, message) {
