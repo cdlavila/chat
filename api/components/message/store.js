@@ -7,8 +7,8 @@ class Store {
         return createdMessage
     }
 
-    static async getAllMessages (user) {
-        const filter = !user ? {} : { user: user }
+    static async getAllMessages (chat) {
+        const filter = !chat ? {} : { chat: chat }
         return Model.find(filter).populate('user')
     }
 

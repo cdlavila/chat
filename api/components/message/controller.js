@@ -5,6 +5,9 @@ const store = require('./store')
 class Controller {
     static async createMessage (req, res) {
         try {
+            if (!req?.body?.chat || !req?.body?.user || !req?.body?.message) {
+                return Response.error(res, statusCode?.SERVER_ERROR, 'Chat, user and message are required')
+            }
             const message = await store.createMessage(req?.body)
             return Response.success(res, statusCode?.CREATED, message, 'Message created successfully')
         } catch (error) {
@@ -14,7 +17,7 @@ class Controller {
 
     static async getAllMessages (req, res) {
         try {
-            const messages = await store.getAllMessages(req?.query?.user)
+            const messages = await store.getAllMessages(req?.query?.chat)
             return Response.success(res, statusCode?.OK, messages, 'Messages list')
         } catch (error) {
             return Response.error(res, statusCode?.SERVER_ERROR, error?.message)
