@@ -1,6 +1,7 @@
 const statusCode = require('../../network/status-code')
 const Response = require('../../network/response')
 const store = require('./store')
+const socket = require('../../../socket').socket
 
 class Controller {
     static async createMessage (req, res) {
@@ -9,6 +10,9 @@ class Controller {
                 return Response.error(res, statusCode?.SERVER_ERROR, 'Chat, user and message are required')
             }
             const message = await store.createMessage(req?.body)
+
+            socket.io.emit('message', message)
+
             return Response.success(res, statusCode?.CREATED, message, 'Message created successfully')
         } catch (error) {
             return Response.error(res, statusCode?.SERVER_ERROR, error?.message)
