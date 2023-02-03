@@ -7,7 +7,6 @@ async function connect () {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
-        console.log('Database connection established')
     }
 
     if (process.env.NODE_ENV === 'production') {
@@ -15,7 +14,6 @@ async function connect () {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
-        console.log('Database connection established')
     }
 }
 

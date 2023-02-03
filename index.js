@@ -7,7 +7,7 @@ const server = require('http').Server(app)
 const socket = require('./socket')
 const cors = require('cors')
 const database = require('./database')
-const apiRouter = require('./api/network/routes')
+const apiRouter = require('./src/network/routes')
 const port = process.env.PORT || 3000
 
 // To use JSON format in the request
@@ -18,7 +18,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 // Establish connection with the database
-database()
+database().then(() => {
+    console.log('Database connected successfully')
+  }
+)
 
 // Connect server to sockets
 socket.connect(server)
