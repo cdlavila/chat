@@ -1,6 +1,6 @@
 const statusCode = require('../../network/status-code')
 const Response = require('../../network/response')
-const store = require('./store')
+const store = require('./service')
 const socket = require('../../../socket').socket
 
 class Controller {

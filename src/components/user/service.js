@@ -1,6 +1,6 @@
 const Model = require('./model')
 
-class Store {
+class Service {
     static async createUser (user) {
         const createdUser = new Model(user)
         await createdUser.save()
@@ -25,4 +25,4 @@ class Store {
     }
 }
 
-module.exports = Store
+module.exports = Service

@@ -1,6 +1,6 @@
 const Model = require('./model')
 
-class Store {
+class Service {
     static async createChat (users) {
         const chat = {
             users: users,
@@ -16,4 +16,4 @@ class Store {
     }
 }
 
-module.exports = Store
+module.exports = Service

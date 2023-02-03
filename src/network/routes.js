@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const messageRouter = require('../components/message/network')
-const userRouter = require('../components/user/network')
-const chatRouter = require('../components/chat/network')
+const messageRouter = require('../components/message/router')
+const userRouter = require('../components/user/router')
+const chatRouter = require('../components/chat/router')
 
 router.use('/messages', messageRouter)
 router.use('/users', userRouter)

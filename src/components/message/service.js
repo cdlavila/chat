@@ -1,6 +1,6 @@
 const Model = require('./model')
 
-class Store {
+class Service {
     static async createMessage (message) {
         const createdMessage = new Model(message)
         await createdMessage.save()
@@ -26,4 +26,4 @@ class Store {
     }
 }
 
-module.exports = Store
+module.exports = Service
